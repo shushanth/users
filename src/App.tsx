@@ -2,13 +2,13 @@ import React from "react";
 import "./App.css";
 import { Provider } from "react-redux";
 
-import Page from "./page/Page";
+import Pages from "./pages/Pages";
 import rootStore from "./store/rootStore";
 
 const App = () => {
   return (
     <Provider store={rootStore}>
-      <Page />
+      <Pages />
     </Provider>
   );
 };
