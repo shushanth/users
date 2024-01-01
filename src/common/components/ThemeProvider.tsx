@@ -26,11 +26,6 @@ const ThemeProvider = ({ children }: ThemeProviderProps): JSX.Element => {
       }
     },
   });
-  React.useEffect(() => {
-    return () => {
-      themeRef.current = null;
-    };
-  }, []);
   return (
     <div className="theme-layout" ref={themeRef}>
       {children}
