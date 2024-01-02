@@ -5,13 +5,14 @@ import { devices } from "./breakpoints";
 export const Layout = styled.div<{
   $type: "row" | "column";
   $fullSize?: boolean;
+  $itemsCenter?: boolean;
 }>`
   display: flex;
   column-gap: 40px;
   row-gap: 10px;
   flex-direction: ${(props) => props.$type};
   flex: ${(props) => (props.$fullSize ? 1 : "none")};
-
+  align-items: ${(props) => (props.$itemsCenter ? "center" : "initial")};
   @media (min-width: ${devices.mobileS}) and (max-width: ${devices.laptop}) {
     flex-direction: column;
   }
