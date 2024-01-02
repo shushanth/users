@@ -28,7 +28,7 @@ yarn analyze:bundle (open the bundle analyzer on http://localhost:2100/)
 ### Running the tests
 
 ```
-yarn test or npm run test.
+yarn test or npm run test
 ```
 
 ### Performance
