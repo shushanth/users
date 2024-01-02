@@ -4,7 +4,7 @@ Users app which has three pages home, user list, and user detail.
 
 ## Project setup 
 ```
-yarn  or npm install
+yarn or npm install
 ```
 
 ### Build and minifies for production
