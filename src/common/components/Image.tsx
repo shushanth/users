@@ -8,7 +8,7 @@ interface ImageProps {
   label: string;
 }
 
-const Image = ({ type, url, label }: ImageProps) => {
+const Image = ({ type, url, label }: ImageProps): JSX.Element => {
   return type === "fallback" ? (
     <Styled.Image alt={label} $type="fallback" />
   ) : (

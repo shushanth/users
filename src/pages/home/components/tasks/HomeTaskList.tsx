@@ -6,6 +6,7 @@ import * as Styled from "../../../../common/components/styled";
 import * as HomeSliceModel from "../../store/homeSliceModel";
 import Loading from "../../../../common/components/Loading";
 import TaskList from "./TaskList";
+import EmptyResults from "../../../../common/components/EmptyResults";
 
 interface HomeTaskListProps {
   onDeleteTask: (taskId: number) => void;
@@ -24,6 +25,7 @@ const HomeTaskList = ({ onDeleteTask }: HomeTaskListProps) => {
     <React.Suspense fallback={loading && <Loading />}>
       <Styled.Heading $type="h3">Tasks</Styled.Heading>
       <Styled.ListContainer>
+        {!tasks.length && <EmptyResults label="Tasks" />}
         {tasks.map((task: HomeSliceModel.Task) => {
           return (
             <TaskList

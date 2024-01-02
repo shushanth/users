@@ -1,19 +1,19 @@
 import styled from "styled-components";
 
-import { devices } from "./breakpoints";
+import { devices, fontSizes, colors } from "./common";
 
 export const Heading = styled.p<{ $type?: "h1" | "h2" | "h3" }>`
   padding: 4px;
   ${({ $type }) => {
     switch ($type) {
       case "h1":
-        return `font-size: 30px;`;
+        return `font-size: ${fontSizes.headings.xlarge}`;
       case "h2":
-        return `font-size: 26px;`;
+        return `font-size: ${fontSizes.headings.large}`;
       case "h3":
-        return `font-size: 22px;`;
+        return `font-size: ${fontSizes.headings.medium}`;
       default:
-        return `font-size: 20px;`;
+        return `font-size: ${fontSizes.headings.small}`;
     }
   }}
 `;
@@ -26,23 +26,23 @@ export const Label = styled.p<{
   ${({ $size }) => {
     switch ($size) {
       case "xsmall":
-        return `font-size: 12px;`;
+        return `font-size: ${fontSizes.labels.xsmall};`;
       case "small":
-        return `font-size: 14px;`;
+        return `font-size: ${fontSizes.labels.small};`;
       case "medium":
-        return `font-size: 16px;`;
+        return `font-size: ${fontSizes.labels.medium};`;
       default:
-        return `font-size: 18px;`;
+        return `font-size: ${fontSizes.labels.large}`;
     }
   }}
   ${({ $level }) => {
     switch ($level) {
       case "primary":
-        return `color: #000000a8;`;
+        return `color: ${colors.blackPrimary}`;
       case "secondary":
-        return `color: #000000e8;`;
+        return `color: ${colors.blackSecondary}`;
       case "error":
-        return `color: #ff0000d1;`;
+        return `color: ${colors.redPrimary}`;
       default:
         return `color: inherit;`;
     }

@@ -1,9 +1,27 @@
 import React from "react";
 
+import * as Styled from "./styled";
 import { RootState } from "../../store/rootStore";
 import { useSelectorNoRender } from "../hooks/useSelectorNoRender";
 
 export type Theme = "light" | "dark";
+
+enum ThemeColors {
+  "LIGHT" = "light",
+  "DARK" = "dark",
+}
+
+const themeStyles = {
+  light: {
+    backgroundColor: "#fff",
+    color: "#000",
+  },
+  dark: {
+    backgroundColor: "#000",
+    color: "#fff",
+  },
+};
+
 interface ThemeProviderProps {
   children: React.ReactNode;
 }
@@ -21,16 +39,18 @@ const ThemeProvider = ({ children }: ThemeProviderProps): JSX.Element => {
     onChangeUpdate: (updatedValue) => {
       const element = themeRef.current;
       if (element) {
-        element.className = "";
-        element.className = `theme-layout ${updatedValue.value}`;
+        if (updatedValue.value === ThemeColors.LIGHT) {
+          element.style.backgroundColor = themeStyles.light.backgroundColor;
+          element.style.color = themeStyles.light.color;
+        } else {
+          element.style.backgroundColor = themeStyles.dark.backgroundColor;
+          element.style.color = themeStyles.dark.color;
+        }
       }
     },
   });
-  return (
-    <div className="theme-layout" ref={themeRef}>
-      {children}
-    </div>
-  );
+
+  return <Styled.ThemeLayout ref={themeRef}>{children}</Styled.ThemeLayout>;
 };
 
 export default ThemeProvider;

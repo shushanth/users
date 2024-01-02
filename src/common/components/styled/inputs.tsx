@@ -1,9 +1,10 @@
 import styled from "styled-components";
+import { colors, fontSizes } from "./common";
 
 export const Input = styled.input<{ $size?: "small" | "medium" }>`
   padding: 10px;
   color: #393939;
-  border: 1px solid #ccc;
+  border: 1px solid ${colors.grayPrimary};
   border-radius: 4px;
   ${({ $size }) => {
     switch ($size) {
@@ -18,7 +19,7 @@ export const Input = styled.input<{ $size?: "small" | "medium" }>`
 `;
 
 export const TextArea = styled.textarea`
-  font-size: 14px;
-  border: 1px solid #ccc;
+  font-size: ${fontSizes.labels.small};
+  border: 1px solid ${colors.grayPrimary};
   padding: 10px;
 `;

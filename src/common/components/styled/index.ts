@@ -12,7 +12,7 @@ import {
 import { ListContainer, List, ListBucket } from "./lists";
 import { Link } from "./links";
 import { Heading, Label } from "./typography";
-import { Button, ButtonArrow } from "./buttons";
+import { Button, ButtonArrow, DropdownButtonWrapper } from "./buttons";
 import { Input, TextArea } from "./inputs";
 import { Image } from "./images";
 
@@ -35,6 +35,7 @@ export {
   Input,
   Button,
   ButtonArrow,
+  DropdownButtonWrapper,
   TextArea,
   Image,
 };

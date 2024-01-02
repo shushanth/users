@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { devices } from "./breakpoints";
+import { devices, colors } from "./common";
 
 export const ListContainer = styled.div`
   display: flex;
@@ -10,7 +10,7 @@ export const ListContainer = styled.div`
 
 export const List = styled.div`
   display: flex;
-  background: #f1f1ff;
+  background: ${colors.magnoliaWhite};
   border-radius: 2px;
   gap: 10px;
   padding: 10px 0;
@@ -27,7 +27,7 @@ export const ListBucket = styled.div<{
   padding: 0 20px;
   display: flex;
   flex-direction: column;
-  color: #393939;
+  color: ${colors.jetBlack};
   align-items: ${(props) => props.$flexRowAlign ?? "initial"};
   ${({ $flex = "full" }) => {
     switch ($flex) {

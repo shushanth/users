@@ -68,10 +68,18 @@ const Home = (): JSX.Element => {
   };
 
   return (
-    <Styled.PageLayout>
+    <Styled.PageLayout data-testid="homePage-component">
       <Styled.Layout className="layout" $type="row">
-        <HomeTasks onTaskAdd={onAddTasks} onTaskDelete={onDeleteTask} />
-        <HomeNotes onNoteAdd={onAddNotes} onNoteDelete={onDeleteNote} />
+        <HomeTasks
+          data-testid="homeTasks-component"
+          onTaskAdd={onAddTasks}
+          onTaskDelete={onDeleteTask}
+        />
+        <HomeNotes
+          data-testid="homeNotes-component"
+          onNoteAdd={onAddNotes}
+          onNoteDelete={onDeleteNote}
+        />
       </Styled.Layout>
     </Styled.PageLayout>
   );

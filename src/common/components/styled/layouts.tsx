@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import { devices } from "./breakpoints";
+import { devices, colors } from "./common";
 
 export const Layout = styled.div<{
   $type: "row" | "column";
@@ -23,7 +23,7 @@ export const NavLayout = styled.div`
   margin: 10px 0 14px 0;
   border-radius: 4px;
   background: #f1f1f4b3;
-  box-shadow: 0 10px 10px #6666662b;
+  box-shadow: 0 10px 10px ${colors.whiteSnow};
 `;
 
 export const PaginationLayout = styled.div`
@@ -49,22 +49,22 @@ export const PageActionsLayout = styled.div<{ $fullSize?: boolean }>`
 
 export const DropdownLayout = styled.div`
   width: 200px;
-  border: 1px solid #8282f447;
+  border: 1px solid ${colors.tropicalIndigo};
   position: absolute;
   z-index: 1;
   background: #fff;
   margin: 6px 0;
   padding-bottom: 8px;
-  box-shadow: 0 10px 10px #6666662b;
+  box-shadow: 0 10px 10px ${colors.graniteGray};
   border-radius: 4px;
   .item {
     font-size: 15px;
-    border-bottom: 1px solid #8282f447;
+    border-bottom: 1px solid ${colors.tropicalIndigo};
     color: blue;
     cursor: pointer;
     padding: 10px;
     &:hover {
-      background-color: #8282f447;
+      background-color: ${colors.tropicalIndigo};
     }
     &:last-child {
       border: none;
@@ -80,33 +80,19 @@ export const ThemeSwitchLayout = styled.div`
   flex-direction: column;
   z-index: 1;
 `;
-export const ThemeLayout = styled.div<{ $theme?: "light" | "dark" }>`
+export const ThemeLayout = styled.div`
   display: flex;
   flex-direction: column;
   height: 100vh;
   width: 100vw;
-  ${({ $theme = "light" }) => {
-    switch ($theme) {
-      case "light":
-        return `
-          background-color: #fff;
-          color: #000;
-        `;
-      case "dark":
-        return `
-          background-color: #000;
-          color: #fff;
-        `;
-    }
-  }}
 `;
 
 export const PageCardLayout = styled.div`
   margin: 20px;
   padding: 20px;
   border-radius: 10px;
-  border: 1px solid #6666662b;
-  box-shadow: 0 10px 10px #6666662b;
+  border: 1px solid ${colors.graniteGray};
+  box-shadow: 0 10px 10px ${colors.graniteGray};
   display: flex;
   flex-direction: column;
   min-height: 500px;

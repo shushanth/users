@@ -1,5 +1,5 @@
 {
-  "name": "users",
+  "name": "users_growth",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -49,5 +49,10 @@
   },
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11"
+  },
+  "jest": {
+    "transformIgnorePatterns": [
+       "/node_modules/(?!(axios)/)"
+     ]
   }
 }

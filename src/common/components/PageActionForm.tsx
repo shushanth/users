@@ -75,6 +75,7 @@ const PageActionForm = ({
       <Styled.Button
         disabled={isActionBtnDisabled}
         onClick={onActionFormSubmit}
+        aria-label={`${inputPlaceHolder}-button`}
       >
         {actionBtnTitle}
       </Styled.Button>

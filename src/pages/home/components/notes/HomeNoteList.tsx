@@ -6,6 +6,7 @@ import * as Styled from "../../../../common/components/styled";
 import * as HomeSliceModel from "../../store/homeSliceModel";
 import NoteList from "./NoteList";
 import Loading from "../../../../common/components/Loading";
+import EmptyResults from "../../../../common/components/EmptyResults";
 
 interface HomeNoteListProps {
   onDeleteNote: (noteId: number) => void;
@@ -25,6 +26,7 @@ const HomeNoteList = ({ onDeleteNote }: HomeNoteListProps) => {
     <React.Suspense fallback={<Loading />}>
       <Styled.Heading $type="h3">Notes</Styled.Heading>
       <Styled.ListContainer>
+        {!notes.length && <EmptyResults label="Notes" />}
         {notes.map((note: HomeSliceModel.Note) => (
           <NoteList
             key={note.noteId}

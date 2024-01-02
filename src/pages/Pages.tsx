@@ -21,12 +21,15 @@ const Pages = (): JSX.Element => {
   );
 
   return (
-    <ThemeProvider>
-      <Styled.PageLayout>
-        <ThemeSwitch onThemeChange={triggerThemeChange} />
+    <ThemeProvider data-testid="themeProvider-component">
+      <Styled.PageLayout data-testid="themeProviderPageLayout-component">
+        <ThemeSwitch
+          onThemeChange={triggerThemeChange}
+          data-testid="themeSwitch-component"
+        />
         <BrowserRouter>
-          <PageNavigation />
-          <PageRoutes />
+          <PageNavigation data-testid="pageNavigation-component" />
+          <PageRoutes data-testid="pageRoutes-component" />
         </BrowserRouter>
       </Styled.PageLayout>
     </ThemeProvider>
