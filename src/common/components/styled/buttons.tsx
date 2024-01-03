@@ -8,7 +8,7 @@ export const Button = styled.button<{
   padding: 10px 15px;
   background-color: ${colors.white};
   cursor: pointer;
-  font-size: 14px;
+  font-size: ${fontSizes.labels.small};
   border-radius: 4px;
   &:disabled {
     pointer-events: none;

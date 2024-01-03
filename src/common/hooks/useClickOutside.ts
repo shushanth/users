@@ -6,17 +6,20 @@ interface UseClickOutsideProps {
 }
 
 export const useClickOutside = ({ nodeRef, handler }: UseClickOutsideProps) => {
-  const clickOutsideHandler = (event: MouseEvent) => {
-    if (!nodeRef.current || !nodeRef.current.contains(event.target as Node)) {
-      handler();
-      return;
-    }
-  };
+  const clickOutsideHandler = React.useCallback(
+    (event: MouseEvent) => {
+      if (!nodeRef.current || !nodeRef.current.contains(event.target as Node)) {
+        handler();
+        return;
+      }
+    },
+    [handler, nodeRef]
+  );
 
   React.useEffect(() => {
     document.addEventListener("mousedown", clickOutsideHandler);
     return () => {
       document.removeEventListener("mousedown", clickOutsideHandler);
     };
-  }, [nodeRef, handler]);
+  }, [nodeRef, handler, clickOutsideHandler]);
 };

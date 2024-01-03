@@ -23,11 +23,11 @@ const UserList = (): JSX.Element => {
     userListSelectors.applyPageFilters
   );
 
-  const requestUserList = async () => {
+  const requestUserList = React.useCallback(async () => {
     const userListMocks = userListMockResponse();
     await dispatch(userListSliceAction.fetchUserList(userListMocks));
     await dispatch(userListSliceAction.paginateUserList("reset"));
-  };
+  }, [dispatch]);
 
   const onUserListSort = async ({ value }: DropDownItem) => {
     await dispatch(
@@ -54,7 +54,7 @@ const UserList = (): JSX.Element => {
 
   React.useEffect(() => {
     requestUserList();
-  }, []);
+  }, [requestUserList]);
 
   return (
     <Styled.PageLayout>

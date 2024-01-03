@@ -1009,21 +1009,11 @@ const mockUsers = [
   },
 ];
 
-const sleep = (ms: number) => {
-  return new Promise((resolve) => setTimeout(resolve, ms));
-};
-
-export const userListMockDelayResponse = async () => {
-  const delayResponse = await sleep(1).then(() => mockUsers);
-  return await delayResponse;
-};
-
 export const userListMockResponse = () => {
   return mockUsers;
 };
 
-export const userDetailMockResponse = async (id: number) => {
+export const userDetailMockResponse = (id: number) => {
   const mockResponse = mockUsers.filter((user) => user.id === id)?.pop();
-  const delayResponse = await sleep(1).then(() => mockResponse);
-  return await delayResponse;
+  return mockResponse;
 };
