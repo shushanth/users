@@ -45,7 +45,7 @@ export const colors = {
   whiteSnow: "#6666662b",
   tropicalIndigo: "#8282f447",
   tropicalIndigoLight: "#8282f4",
-  graniteGray: "#6666662b",
+  graniteGray: "#6666665b",
   persianBlue: "#2929be",
   persianBlueLight: "#3636da",
   neonSilver: "#ccccccb5",
