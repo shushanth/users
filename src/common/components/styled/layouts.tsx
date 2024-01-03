@@ -83,7 +83,7 @@ export const ThemeSwitchLayout = styled.div`
 export const ThemeLayout = styled.div`
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  min-height: 100vh;
   width: 100vw;
 `;
 

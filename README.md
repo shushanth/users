@@ -41,5 +41,5 @@ yarn test or npm run test
 ### Performance
 
 - Used lighthouse & react performance dev tools, to detect the performance metrics and re-renderes on the app.
-- Lazy loaded route components (user-list & user-detail) on the initial page load, moreover structured the components to avoid the re-renders with the memo, useMemo, useCallback, etc.
+- Lazy loaded route components (user-list & user-detail) on the initial page load, moreover structured the components to avoid the re-renders with the react hooks wherever necessary.
 - Added no render common hooks to avoid unnecessary renders.
