@@ -41,6 +41,7 @@ const Pagination = ({
       <Styled.ButtonArrow
         onClick={() => onPageDecrement("decrement")}
         disabled={currentPage === 1}
+        aria-label="button-arrow-pagination"
       >
         &larr;
       </Styled.ButtonArrow>
@@ -48,6 +49,7 @@ const Pagination = ({
       <Styled.ButtonArrow
         onClick={() => onPageIncrement("increment")}
         disabled={isPagesExceeded()}
+        aria-label="button-arrow-pagination"
       >
         &rarr;
       </Styled.ButtonArrow>

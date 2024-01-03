@@ -16,26 +16,26 @@ const UserDetailProfile = () => {
     (state: RootState) => state.userDetailPage.user
   );
 
-  const getCurrentUserDetails = async () => {
+  const getCurrentUserDetails = React.useCallback(() => {
     const currentRoutedUserId: number = params?.id
       ? (parseInt(params?.id, 10) as number)
       : 0;
     if (currentRoutedUserId) {
-      const mockUser = await userDetailMockResponse(currentRoutedUserId);
+      const mockUser = userDetailMockResponse(currentRoutedUserId);
       dispatch(
         userDetailSliceAction.updateUserDetails(
           mockUser as UserDetailSliceModel.UserDetail
         )
       );
     }
-  };
+  }, [dispatch, params]);
 
   const getImageLabel = (): string =>
     `${firstName.charAt(0)} ${lastName.charAt(0)}`;
 
   React.useEffect(() => {
     getCurrentUserDetails();
-  }, []);
+  }, [getCurrentUserDetails]);
 
   return (
     <Styled.PageCardLayout>

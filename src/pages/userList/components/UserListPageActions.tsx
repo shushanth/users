@@ -48,6 +48,7 @@ const UserListPageActions = React.memo(
             placeholder="search by name"
             $size="medium"
             onChange={(event) => onListInputSearch(event.target.value)}
+            aria-label="search-filter-name"
           />
         </Styled.Layout>
         <Styled.Layout $type="row">

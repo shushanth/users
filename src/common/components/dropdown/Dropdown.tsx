@@ -1,4 +1,5 @@
 import React from "react";
+import { useClickOutside } from "../../hooks/useClickOutside";
 
 import * as Styled from "../styled";
 import DropdownItems from "./DropdownItems";
@@ -22,7 +23,15 @@ const DropdownMenu = ({
   btnTitle,
   onDropdownSelected,
 }: DropdownProps): JSX.Element => {
+  const dropdownLayoutRef = React.useRef(
+    null
+  ) as React.MutableRefObject<HTMLDivElement | null>;
+  const onOutsideClick = () => {
+    setToggleDropdown(false);
+  };
+  useClickOutside({ nodeRef: dropdownLayoutRef, handler: onOutsideClick });
   const [toggleDropdown, setToggleDropdown] = React.useState(false);
+
   const dropdownItemClick = (item: DropDownItem) => {
     setToggleDropdown(false);
     onDropdownSelected(item);
@@ -30,21 +39,21 @@ const DropdownMenu = ({
   return (
     <>
       {!withButton && (
-        <Styled.DropdownLayout>
+        <Styled.DropdownLayout ref={dropdownLayoutRef}>
           <DropdownItems items={items} itemClick={dropdownItemClick} />
         </Styled.DropdownLayout>
       )}
       {withButton && (
-        <div className="relative flex-full">
+        <Styled.DropdownButtonWrapper>
           <Styled.Button onClick={() => setToggleDropdown(!toggleDropdown)}>
             {btnTitle} &darr;
           </Styled.Button>
           {toggleDropdown && (
-            <Styled.DropdownLayout>
+            <Styled.DropdownLayout ref={dropdownLayoutRef}>
               <DropdownItems items={items} itemClick={dropdownItemClick} />
             </Styled.DropdownLayout>
           )}
-        </div>
+        </Styled.DropdownButtonWrapper>
       )}
     </>
   );

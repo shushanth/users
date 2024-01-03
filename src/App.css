@@ -35,27 +35,3 @@ a {
   padding: 0;
   box-sizing: border-box;
 }
-
-.relative {
-  position: relative;
-}
-.flex-full {
-  flex: 1;
-}
-
-.theme-layout {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  width: 100vw;
-} 
-
-.dark {
-  background-color: #000;
-  color: #fff;
-}
-
-.light {
-  background-color: #fff;
-  color: #000;
-}

@@ -1,18 +1,19 @@
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
+import { colors } from "./common";
 
 export const Link = styled(NavLink)<{ $linkType: "nav" | "default" }>`
   ${({ $linkType }) => {
     switch ($linkType) {
       case "nav": {
         return `
-        color: #2929be;
+        color: ${colors.persianBlue};
         text-decoration: none;
         margin: 20px;
         padding-bottom: 4px;
         &:hover,
         &:focus {
-          color: #3636da;
+          color: ${colors.persianBlueLight};
         }
         &.active {
           border-bottom: 3px solid;
@@ -25,7 +26,7 @@ export const Link = styled(NavLink)<{ $linkType: "nav" | "default" }>`
         return `
         text-decoration: none;
           &:hover {
-            border-left: 2px solid #2929be;
+            border-left: 2px solid ${colors.persianBlue};
           }
         `;
       }
